@@ -1,0 +1,350 @@
+/* ==========================================================================
+   1. RESET & GLOBAL STYLES
+   ========================================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { height: 100%; overflow-y: scroll; }
+
+body { 
+    background-color: #d4d9d6; 
+    font-family: Arial, sans-serif; 
+    min-height: 100vh; 
+}
+
+
+
+
+/* ==========================================================================
+   2. NAVBAR & NAVIGATION
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #d4d9d600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    overflow: visible;
+}
+
+.navbar nav ul { display: flex; list-style: none; }
+
+.navbar nav ul li a {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    color: #0b61b8;
+    margin-left: 40px;
+    font-size: 18px;
+}
+
+
+/* --- Dropdown Menu --- */
+.dropdown { 
+    position: relative; 
+    display: inline-block; 
+    padding-bottom: 20px;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d4d9d600;
+    min-width: 140px;
+    z-index: 1000;
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-top: 0;
+    text-align: center;
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+
+.dropdown-content a {
+    color: #0b61b8 !important;
+    padding: 8px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #b5cade !important;  /* A darker blue or any color you prefer */
+}
+
+/* ==========================================================================
+   3. HERO & CONTENT BOXES
+   ========================================================================== */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #d4d9d6;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+}
+
+
+.content-box {
+    color: #0b61b8;
+    width: 75%;
+    margin: 50px auto;
+    padding: 40px;
+    text-align: justify;
+    /* Ensure content stacks nicely */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This keeps the icon centered with the text */
+}
+
+.content-box h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 6em;
+    font-weight: 400;
+}
+
+.content-box p {
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 1.8;
+}
+
+.logo {
+    color: #0b61b8;
+    font-size: 24px;
+}
+
+/* This hides the header ONLY on the last section */
+.text-section {
+    z-index: 9; /* Lower than the navbar (10) */
+    position: relative; /* Removes the sticky effect */
+}
+
+/* 1. Base style (no position here, different from image grid column) */
+.audio-trigger {
+    width: 40px !important;
+    height: 40px !important;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block !important;
+    visibility: visible !important;
+    margin: 0 auto 20px auto; /* Centers it in the hero box */
+    margin-top: 40px;
+}
+
+.audio-trigger:hover { transform: scale(1.3); }
+
+/* This class will force the cursor to be an arrow and block clicks */
+.audio-disabled {
+    pointer-events: none !important;
+    cursor: default !important;
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   4. PHOTO GRID & OVERLAYS
+   ========================================================================== */
+
+
+.photo-section {
+    height: 100vh;
+    width: 100%;
+    background-color: #ffffff00; /* Solid white to hide sections below */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    pointer-events: none; /* Allows clicks to pass through to elements below */ 
+}
+
+
+.three-column-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 90%;
+    height: 60vh;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.grid-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+.grid-item.placeholder {
+    opacity: 0; /* Keeps the space, makes it invisible */
+    aspect-ratio: 16 / 9;
+}
+
+.main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* 5. Z-Index Stacking */
+.photo-section:nth-of-type(2) { z-index: 2; }
+.photo-section:nth-of-type(3) { z-index: 3; }
+.photo-section:nth-of-type(4) { z-index: 4; }
+.text-section { z-index: 5; }
+
+.image-overlay-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* 2. Grid-specific style (this only applies to images in the grid) */
+
+.image-overlay-container .audio-trigger {
+position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    pointer-events: auto;
+    margin: 0; /* Override the margin from the base class */
+}
+
+
+
+/* ==========================================================================
+   5. Text section Reflections
+   ========================================================================== */
+
+   .text-section {
+    min-height: 100vh;      /* Use min-height so it doesn't shrink too much */
+    height: auto;           /* Change from 100vh to auto */
+    background-color: #d4d9d6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;     /* Crucial: Change from sticky to relative */
+    z-index: 5;
+    padding: 100px 0;       /* Gives it breathing room */
+}
+
+.text-container {
+    text-align: center;
+    color: #0b61b8;
+        width: 68%;           /* Occupies 2/3 of the screen */
+}
+
+.text-container h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 6em;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   6. FOOTER & MISC
+   ========================================================================== */
+/* --- Footer Container --- */
+.footer {
+    width: 100%;
+    padding: 40px 50px;
+    background-color: #d4d9d6;
+    color: #0b61b8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    z-index: 10;
+    overflow: visible; /* Ensures the menu isn't clipped */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.footer-content p {
+    font-size: 24px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Footer Navigation --- */
+.footer-nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Drop-up Logic --- */
+.dropup {
+    position: relative;
+    display: inline-block;
+    padding-top: 20px; /* bridge above the link, matches dropdown's 20px */
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    bottom: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d4d9d6;
+    min-width: 140px;
+    z-index: 9999;
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-bottom: 0;
+    text-align: center; /* added — matches .dropdown-content */
+    text-decoration: underline;
+        text-underline-offset: 6px;
+}
+
+/* --- Interaction --- */
+.dropup:hover .dropup-content {
+    display: block;
+}
+
+/* --- Links inside the menu --- */
+.dropup-content a {
+    color: #0b61b8 !important;
+    padding: 8px 16px;
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.dropup-content a:hover {
+  color: #b5cade !important;
+}
+.footer-nav .dropbtn {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    color: #0b61b8;
+    font-size: 18px;
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESC515</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+    <div class="logo">ESC515</div>
+    <nav>
+        <ul>
+            <!-- Dropdown Structure -->
+            <li class="dropdown">
+                <a href="#">AT 1</a>
+                <div class="dropdown-content">
+                    <a href="#">Introduction</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">AT 2</a>
+                <div class="dropdown-content">
+                    <a href="#">Week 1</a>
+                    <a href="#">Week 2</a>
+                    <a href="#">Week 3</a>
+                    <a href="#">Week 4</a>
+                </div>
+            </li>
+         
+            <li class="dropdown">
+                <a href="#">AT 3</a>
+                <div class="dropdown-content">
+                    <a href="#">Week 5</a>
+                    <a href="#">Week 6</a>
+                    <a href="#">Week 7</a>
+                    <a href="#">Week 8</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    </header>
+
+    <section class="hero-section">
+    <!-- Hidden audio element -->
+        <audio id="myAudio">
+            <source src="audio/your-file.mp3" type="audio/mpeg">
+        </audio>
+
+        <main class="content-box">
+            <h1>Welcome.</h1>
+            <p>My name is Anne and this is my portfolio for the subject ESC515 in session 602026. Considering how much technology surrounds us, and hence the classroom as well, I am very much looking forward to this subject and to learning about it in the next few weeks. Since I started working as a teacher about 2.5 years ago, the classroom has changed significantly in terms of technology due to AI. My students are very dependent on it, which I am puzzled about. It seems like the muscle memory to Google Lens has developed so quickly that sometimes they don’t even try to think about the answers themselves anymore. That is concerning to me. I am sure there are answers and I am excited to learn. Further, my school introduced tech-free Tuesdays about a year ago, where students are not using screens, and will implement a new 50% tech-free rule in every lesson this coming term. The research this decision is based on I haven’t seen yet, though since starting this subject I am quite curious.
+
+<br>On the other hand, I use Google Classroom every day, a great way to archive lesson content and communicate with students. In Science especially, the world of interactives is amazing and students are able to grasp abstract concepts through technology like never before. I can draw on my iPad and students see this on the TV. I use random name generators, Kahoot quizzes for fun and Google Forms for quick, self-marking formative assessments. Learning management systems have data to improve student learning at your fingertips and teacher-approved worksheets on TPT for help. I also use science teacher Facebook groups for ideas and help; technology is everywhere and, in my opinion, useful, even as I remain aware of its limits.
+</p>
+            <!-- Speaker Icon inside the content box -->
+            <img src="img/speaker.png" 
+                id="hero-speaker"
+                alt="Play Audio" 
+                class="audio-trigger" 
+                onclick="playSound()">
+        </main>
+    </section>
+
+    <!-- Grid Row 1 -->
+    <section class="photo-section">
+        <div class="three-column-grid">
+
+            <div class="grid-item placeholder"><span>+</span>
+            </div>
+
+            <div class="grid-item">
+                <div class="image-overlay-container">
+                    <img src="img/Gameboy.png" alt="Gallery Image" class="main-img">
+                    <img src="img/speaker.png" class="audio-trigger" onclick="playAudio('audio1')">
+                    <audio id="audio1" src="audio/file1.mp3"></audio>
+                </div>
+            </div>
+
+            <div class="grid-item placeholder"><span>+</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Grid Row 2 -->
+    <section class="photo-section">
+    <div class="three-column-grid">
+
+        <div class="grid-item">
+            <div class="image-overlay-container">
+                <img src="img/Overhead.png" alt="1" class="main-img">
+                <img src="img/speaker.png" class="audio-trigger" onclick="playAudio('audio2')">
+                <audio id="audio2" src="audio/OverheadProjector.m4a"></audio>
+            </div>
+        </div>
+
+        <div class="grid-item placeholder"><span>+</span>
+        </div>
+
+        <div class="grid-item placeholder"><span>+</span>
+        </div>
+
+    </div>
+    </section>
+
+    <!-- Grid Row 3 -->
+    <section class="photo-section">
+    <div class="three-column-grid">
+
+        <div class="grid-item placeholder"><span>+</span>
+        </div>
+
+        <div class="grid-item placeholder"><span>+</span>
+        </div>
+
+        <div class="grid-item">
+            <div class="image-overlay-container">
+                <img src="img/dialUp.png" alt="1" class="main-img">
+                <img src="img/speaker.png" class="audio-trigger" onclick="playAudio('audio3')">
+                <audio id="audio3" src="audio/file3.mp3"></audio>
+            </div>
+        </div>
+
+    </div>
+    </section>
+   
+
+
+    <section class="text-section">
+        <div class="text-container">
+            <h1>"If we teach today as we taught yesterday, we rob our children of tomorrow."</h1>
+            <p>— John Dewey</p>
+         </div>
+    </section>
+
+      <footer class="footer">
+    <div class="footer-content">
+        <p>ESC515</p>
+        <nav>
+            <ul class="footer-nav">
+                <!-- Dropup 1 -->
+                <li class="dropup">
+                    <a href="#" class="dropbtn">AT 1</a>
+                    <div class="dropup-content">
+                        <a href="#">Introduction</a>
+                    </div>
+                </li>
+
+                <!-- Dropup 2 -->
+                <li class="dropup">
+                    <a href="#" class="dropbtn">AT 2</a>
+                    <div class="dropup-content">
+                        <a href="#">Week 1</a>
+                        <a href="#">Week 2</a>
+                        <a href="#">Week 3</a>
+                        <a href="#">Week 4</a>
+                    </div>
+                </li>
+
+                <!-- Dropup 3 -->
+                <li class="dropup">
+                    <a href="#" class="dropbtn">AT 3</a>
+                    <div class="dropup-content">
+                        <a href="#">Week 5</a>
+                        <a href="#">Week 6</a>
+                        <a href="#">Week 7</a>
+                        <a href="#">Week 8</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+   <script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.navbar');
+        const lastSection = document.querySelector('.text-section');
+        const heroSpeaker = document.getElementById('hero-speaker');
+        const heroSection = document.querySelector('.hero-section');
+        
+        const rect = lastSection.getBoundingClientRect();
+    
+        // 1. Logic for Header
+        if (rect.top <= 0) {
+            header.style.opacity = "0";
+            header.style.pointerEvents = "none";
+        } else {
+            header.style.opacity = "1";
+            header.style.pointerEvents = "auto";
+        }
+
+        // 2. Logic for Hero Speaker
+        const heroRect = heroSection.getBoundingClientRect();
+
+        if (heroRect.bottom < 100) { 
+            heroSpeaker.classList.add('audio-disabled');
+        } else {
+            heroSpeaker.classList.remove('audio-disabled');
+        }
+    }); // <--- THIS CLOSING BRACE ENDS THE SCROLL LISTENER
+
+    // These functions now sit outside the scroll listener
+    function playSound() {
+        const audio = new Audio('audio/OverheadProjector.m4a');
+        audio.play();
+    }
+
+    function playAudio(audioId) {
+        const audio = document.getElementById(audioId);
+        audio.play();
+    }
+</script>
+
+
+</body>
+</html>
