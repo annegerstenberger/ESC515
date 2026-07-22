@@ -3,14 +3,17 @@
    ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { height: 100%; overflow-y: scroll; }
+html {
+    height: 100%;
 
-body { 
-    background-color: #d4d9d6; 
-    font-family: Arial, sans-serif; 
-    min-height: 100vh; 
 }
 
+body {
+    background-color: #b14a3a;
+    font-family: Arial, sans-serif;
+     min-height: 100%;
+         margin: 0;
+}
 
 
 
@@ -30,13 +33,12 @@ body {
     overflow: visible;
 }
 
-.navbar nav ul { display: flex; list-style: none; }
+.navbar nav ul { display: flex; list-style: none; gap: 20px;}
 
 .navbar nav ul li a {
     text-decoration: underline;
     text-underline-offset: 6px;
     color: #0b61b8;
-    margin-left: 40px;
     font-size: 18px;
 }
 
@@ -50,15 +52,16 @@ body {
 
 
 .dropdown-content {
+     width: 140px;      
+
     display: none;
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #d4d9d600;
+    background-color: #f0efed;
     min-width: 140px;
     z-index: 1000;
-    border-radius: 5px;
     padding: 10px 0;
     margin-top: 0;
     text-align: center;
@@ -85,7 +88,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #d4d9d6;
+    background-color:#f0efed;
     top: 0;
     position: sticky;
     z-index: 1;
@@ -94,7 +97,7 @@ body {
 
 .content-box {
     color: #0b61b8;
-    width: 75%;
+    width: 90%;
     margin: 50px auto;
     padding: 40px;
     text-align: justify;
@@ -108,6 +111,7 @@ body {
     font-family: 'Instrument Serif', serif;
     font-size: 6em;
     font-weight: 400;
+    margin-bottom: 20px;
 }
 
 .content-box p {
@@ -121,11 +125,6 @@ body {
     font-size: 24px;
 }
 
-/* This hides the header ONLY on the last section */
-.text-section {
-    z-index: 9; /* Lower than the navbar (10) */
-    position: relative; /* Removes the sticky effect */
-}
 
 /* 1. Base style (no position here, different from image grid column) */
 .audio-trigger {
@@ -136,7 +135,7 @@ body {
     display: block !important;
     visibility: visible !important;
     margin: 0 auto 20px auto; /* Centers it in the hero box */
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .audio-trigger:hover { transform: scale(1.3); }
@@ -209,7 +208,7 @@ body {
 .photo-section:nth-of-type(2) { z-index: 2; }
 .photo-section:nth-of-type(3) { z-index: 3; }
 .photo-section:nth-of-type(4) { z-index: 4; }
-.text-section { z-index: 5; }
+
 
 .image-overlay-container {
     position: relative;
@@ -236,30 +235,84 @@ position: absolute;
    5. Text section Reflections
    ========================================================================== */
 
-   .text-section {
-    min-height: 100vh;      /* Use min-height so it doesn't shrink too much */
-    height: auto;           /* Change from 100vh to auto */
+ .text-section {
+    height: 100vh;
+    min-height: 100vh;
     background-color: #d4d9d6;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;     /* Crucial: Change from sticky to relative */
+    position: sticky;      /* changed from relative */
+    top: 0;                /* required for sticky to work */
     z-index: 5;
-    padding: 100px 0;       /* Gives it breathing room */
+
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .text-container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
     color: #0b61b8;
-        width: 68%;           /* Occupies 2/3 of the screen */
+    width: 68%;
+    height: 100%;         /* so it can size children properly within .text-section */
+
+}
+
+.reference-list {
+    max-height: calc(100vh - 300px); /* adjust: now accounts for h1 height + section padding */
+    overflow-y: scroll;
+    padding-right: 20px;
+    min-height: 0;        /* keep this — still needed for the flex-shrink fix */
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #0b61b8 #d4d9d6;
+    margin-top: 20px;
+}
+
+/* Chrome, Safari, Edge */
+.reference-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.reference-list::-webkit-scrollbar-track {
+    background: #d4d9d6;
+    border-radius: 10px;
+}
+
+.reference-list::-webkit-scrollbar-thumb {
+    background-color: #0b61b8;
+    border-radius: 10px;
+    border: 2px solid #d4d9d6;
 }
 
 .text-container h1 {
     font-family: 'Instrument Serif', serif;
     font-size: 6em;
     font-weight: 400;
+    text-align: center;
+    margin-top: 30px;
 }
 
+.reference-list h1 {
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.reference-list p {
+    text-align: left;
+    padding-left: 1.27cm;
+    text-indent: -1.27cm;
+    font-size: 18px;
+    line-height: 3;
+    margin-bottom: 1em;
+     overflow-wrap: anywhere;
+}
+.reference-list a {
+    color: #0b61b8;       /* pick your color here */
+    text-decoration: underline;
+}
 /* ==========================================================================
    6. FOOTER & MISC
    ========================================================================== */
@@ -273,9 +326,9 @@ position: absolute;
     justify-content: space-between;
     align-items: center;
     font-family: Arial, sans-serif;
-    position: relative;
-    z-index: 10;
-    overflow: visible; /* Ensures the menu isn't clipped */
+    position: relative;   /* stays in normal flow, not sticky */
+    z-index: 10;           /* higher than .text-section's z-index: 5 */
+    overflow: visible;
 }
 
 .footer-content {
@@ -314,10 +367,9 @@ position: absolute;
     bottom: 100%; 
     left: 50%;
     transform: translateX(-50%);
-    background-color: #d4d9d6;
+    background-color: #f0efed;
     min-width: 140px;
     z-index: 9999;
-    border-radius: 5px;
     padding: 10px 0;
     margin-bottom: 0;
     text-align: center; /* added — matches .dropdown-content */
