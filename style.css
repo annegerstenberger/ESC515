@@ -5,11 +5,12 @@
 
 html {
     height: 100%;
+    scroll-behavior: smooth;
 
 }
 
 body {
-    background-color: #b14a3a;
+    background-color: #feedcd;
     font-family: Arial, sans-serif;
      min-height: 100%;
          margin: 0;
@@ -367,7 +368,7 @@ position: absolute;
     bottom: 100%; 
     left: 50%;
     transform: translateX(-50%);
-    background-color: #f0efed;
+    background-color: #d4d9d6;
     min-width: 140px;
     z-index: 9999;
     padding: 10px 0;
