@@ -60,7 +60,7 @@ body {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #f0efed;
+    background-color: #f0f0e8;
     min-width: 140px;
     z-index: 1000;
     padding: 10px 0;
@@ -89,7 +89,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color:#f0efed;
+    background-color:#f0f0e8;
     top: 0;
     position: sticky;
     z-index: 1;
@@ -98,7 +98,7 @@ body {
 .hero-section-Week1 {
     height: 250vh;              /* total scroll distance for the effect — tune this once the table is in */
     position: relative;
-    background-color: #feedcd;
+    background-color: #f0f0e8;
     z-index: 1;
 }
 
@@ -148,6 +148,7 @@ body {
      font-weight: normal;
     text-align: left;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .content-box p {
@@ -201,15 +202,17 @@ body {
 
 .photo-section {
     height: 100vh;
+    min-height: 100vh;
     width: 100%;
-    background-color: #ffffff00; /* Solid white to hide sections below */
+    background-color: #f0f0e8;
     display: flex;
     justify-content: center;
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 3;              /* higher than .text-section-Week2's z-index: 2 */
     overflow: hidden;
-    pointer-events: none; /* Allows clicks to pass through to elements below */ 
+    pointer-events: none;
 }
 
 
@@ -265,6 +268,23 @@ body {
     border-radius: 15px;
 }
 
+.screenshot-item {
+    aspect-ratio: unset;
+    background-color: transparent;
+    max-width: 70vw;      /* roughly a third of the screen width */
+    max-height: 60vh;     /* keep a reasonable height cap too */
+    margin: 0 auto;       /* extra safety for centering, works even outside flex contexts */
+}
+
+.screenshot-item .main-img {
+    object-fit: contain;
+    width: 100%;           /* fills the container width (now capped at 33vw) */
+    height: auto;
+    max-height: 60vh;
+}
+.screenshot-row {
+    grid-template-columns: 1fr 2fr 1fr;   /* middle column now 2x wider than the sides */
+}
 /* 2. Grid-specific style (this only applies to images in the grid) */
 
 .image-overlay-container .audio-trigger {
@@ -276,8 +296,49 @@ position: absolute;
     margin: 0; /* Override the margin from the base class */
 }
 
+.photo-section {
+    position: relative;
+}
 
+.ticker-wrap {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
 
+.ticker {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    animation: scroll-left 20s linear infinite;
+}
+
+.ticker span {
+    font-size: 24px;
+    color: #0b61b8;
+    padding-right: 20px;
+}
+
+@keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+.screenshot-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+        pointer-events: auto;   /* add this line */
+}
+.screenshot-item .main-img {
+    transition: transform 0.3s ease;
+}
+
+.screenshot-item a:hover .main-img {
+    transform: scale(1.03);
+}
 /* ==========================================================================
    5. Text section Reflections
    ========================================================================== */
@@ -297,13 +358,43 @@ position: absolute;
     box-sizing: border-box;
 }
 
+.text-section-Week1{
+ height: 100vh;
+    min-height: 100vh;
+    background-color: #d4d9d6;
+ display: flex;
+    justify-content: center;
+    align-items: center;
+     position: sticky;      /* changed from relative */
+ top: 0;                /* required for sticky to work */
+    z-index: 5;
+
+}
+
 .text-container {
     display: flex;
     flex-direction: column;
     color: #0b61b8;
     width: 68%;
-    height: 100%;         /* so it can size children properly within .text-section */
+  
 
+}
+
+.text-container-Week1 {
+    color: #0b61b8;
+    width: 85%;
+    text-align: justify;
+    /* Ensure content stacks nicely */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This keeps the icon centered with the text */
+    background-color: #d4d9d6;
+line-height: 2;
+}
+
+.text-container-Week1 p {
+font-family: Arial, sans-serif;
+    font-size: 18px
 }
 
 .reference-list {
@@ -484,4 +575,166 @@ position: absolute;
 .content-table tbody th {
     width: 20%;
     font-weight: 600;
+}
+
+.textWeek1 {
+    color: #0b61b8;
+     height: 100vh;
+    width: 90%;
+    margin: 50px auto;
+    padding: 40px;
+    text-align: justify;
+    /* Ensure content stacks nicely */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This keeps the icon centered with the text */
+    background-color: #b5cade;
+}
+.textWeek1 p {
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   7. Week 2
+   ========================================================================== */
+
+.hero-section-Week2 {
+    height: 100vh;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: #f0f0e8;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.content-box-Week2 {
+    color: #0b61b8;
+    width: 90%;
+    margin: 50px auto;
+    padding: 40px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-box-Week2 h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 6em;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.content-box-Week2 h2 {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.text-section-Week2 {
+    height: 100vh;
+    min-height: 100vh;
+    background-color: #f0f0e8;   /* now matches hero-section-Week2 exactly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.text-container-Week2 {
+    color: #0b61b8;
+    width: 68%;
+    text-align: center;
+}
+
+.text-container-Week2 h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 6em;
+    font-weight: 400;
+}
+
+.text-section-Week2b {
+    height: 100vh;
+    min-height: 100vh;
+    background-color: #f0f0e8;   /* matches your other Week 2 sections */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 4;                  /* higher than the photo-section's z-index: 3 */
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.text-container-Week2b {
+    color: #0b61b8;
+    width: 68%;
+    text-align: justify;
+}
+
+.text-container-Week2b p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.text-section-Week2c {
+    height: 100vh;
+    min-height: 100vh;
+    background-color: #f0f0e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 5;              /* higher than .text-section-Week2b's z-index: 4 */
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.split-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 85%;
+    max-width: 1200px;
+}
+
+.split-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.split-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.split-text {
+    flex: 1;
+    color: #0b61b8;
+}
+
+.split-text p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+    text-align: justify;
 }
