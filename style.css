@@ -133,7 +133,7 @@ body {
     font-family: 'Instrument Serif', serif;
     font-size: 6em;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .content-box h2 {
@@ -184,7 +184,7 @@ body {
     display: block !important;
     visibility: visible !important;
     margin: 0 auto 20px auto; /* Centers it in the hero box */
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .audio-trigger:hover { transform: scale(1.3); }
@@ -195,7 +195,47 @@ body {
     cursor: default !important;
     opacity: 0.5;
 }
+.hero-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 10px;
+}
 
+.text-section-intro {
+    height: 100vh;
+    min-height: 100vh;
+    background-color: #f0f0e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.text-container-intro {
+    color: #0b61b8;
+    width: 80%;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text-container-intro h1 {
+        font-family: 'Instrument Serif', serif;
+    font-size: 6em;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.text-container-intro p {
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 1.8;
+}
 /* ==========================================================================
    4. PHOTO GRID & OVERLAYS
    ========================================================================== */
