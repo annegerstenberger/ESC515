@@ -851,7 +851,7 @@ font-family: Arial, sans-serif;
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(11, 97, 184, 0.4);   /* translucent blue backdrop */
+    background: #feedcd(11, 97, 184, 0.4);   /* translucent blue backdrop */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -916,4 +916,49 @@ font-family: Arial, sans-serif;
 @keyframes slideUp {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+/* ==========================================================================
+   10. Week 4
+   ========================================================================== */
+
+.prezi-section-Week4 {
+   height: auto;     
+    min-height: 100vh;
+    background-color: #f0f0e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+.prezi-container-Week4 {
+    width: 95%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.prezi-container-Week4 h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 6em;
+    font-weight: 400;
+    color: #0b61b8;
+    margin-bottom: 30px;
+}
+
+.prezi-container-Week4 h2 {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 30px;
+    color: #0b61b8; 
+}
+
+.prezi-container-Week4 iframe {
+    width: 100%;
+     height: 70vh;          /* set height directly */
+    aspect-ratio: unset;   
+    border-radius: 15px;
+    border: none;
 }
