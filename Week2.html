@@ -73,7 +73,7 @@
         <img src="img/Atomi.png" alt="Gallery Image" class="main-img">
     </a>
     <img src="img/speaker.png" class="audio-trigger" onclick="playAudio('audio1')">
-    <audio id="audio1" src="audio/file1.mp3"></audio>
+    <audio id="audio1" src="audio/Interpretation.m4a"></audio>
 </div>
     <div class="ticker-wrap">
     <div class="ticker">
@@ -154,6 +154,7 @@ Atomi does use AI-driven recommendations once the students have completed a quiz
 </footer>
 
 <script>
+ 
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.navbar');
     const lastSection = document.querySelector('.text-section-Week2c');
@@ -167,6 +168,26 @@ window.addEventListener('scroll', function() {
         header.style.pointerEvents = "auto";
     }
 });
+
+function playAudio(audioId) {
+    const audio = document.getElementById(audioId);
+    audio.play();
+}
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.navbar');
+    const lastSection = document.querySelector('.text-section-Week2c');
+    const rect = lastSection.getBoundingClientRect();
+
+    if (rect.top <= 0) {
+        header.style.opacity = "0";
+        header.style.pointerEvents = "none";
+    } else {
+        header.style.opacity = "1";
+        header.style.pointerEvents = "auto";
+    }
+});
+
 </script>
 </body>
 </html>
