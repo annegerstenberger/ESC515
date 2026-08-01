@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="modal-overlay" id="welcomeModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <h2>Welcome to Week 3</h2>
+        <p>If you would like to visit my whiteboard entry on Explain Everything, click the image to go there.<br>
+        Scroll up to watch my recording and the elaboration of my curation.<br>
+        Thanks for visiting - Anne </p>
+    </div>
+</div>
+    <header class="navbar">
+    <div class="logo">Classroom Technologies</div>
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="index.html">AT 1</a>
+                <div class="dropdown-content">
+                    <a href="index.html">Introduction</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <a href="Week1.html">AT 2</a>
+                <div class="dropdown-content">
+                    <a href="Week1.html">Week 1</a>
+                    <a href="Week2.html">Week 2</a>
+                    <a href="Week3.html">Week 3</a>
+                    <a href="#">Week 4</a>
+                </div>
+            </li>
+         
+            <li class="dropdown">
+                <a href="#">AT 3</a>
+                <div class="dropdown-content">
+                    <a href="#">Week 5</a>
+                    <a href="#">Week 6</a>
+                    <a href="#">Week 7</a>
+                    <a href="#">Week 8</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <a href="index.html#references">References</a>
+            </li>
+        </ul>
+    </nav>
+    </header>
+
+    <!-- Section 1: Hero -->
+    <section class="hero-section-Week3">
+        <main class="content-box-Week3">
+            <h1>Week 3</h1>
+            <h2>Policy, Curriculum & Educational Technology</h2>
+            <div class="image-row-Week3">
+                <a href="https://expl.ai/SBENUWBV " target="_blank" rel="noopener noreferrer">
+        <img src="img/Explainscreenshot.png" alt="Digital literacy diagram on Explain everything">
+    </a>
+            </div>
+        </main>
+    </section>
+
+    <!-- Section 2: Video -->
+    <section class="video-section-Week3">
+        <div class="video-container-Week3">
+         <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%">
+    <iframe
+        style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; border: 0"
+        scrolling="no"
+        src="https://expl.ai/JMDRASC?mode=embed"
+        frameborder="0"
+        allowfullscreen
+    ></iframe>
+</div>
+        </div>
+    </section>
+
+    <!-- Section 3: Plain text -->
+    <section class="text-section-Week3">
+        <div class="text-container-Week3">
+            <p>Over my short teaching career, I have collected many resources and have used most of the ideas in my diagram so far. In science especially, students analyse data regularly, create online graphs for depth studies, use simulations for many topics to understand abstract concepts and create reports or presentations of their findings using digital tools.<br>
+The element I struggled with in Digital Literacy, however, is practising digital safety and wellbeing. I have not addressed this with my students directly (ACARA, 2026). Policy creators agree that the main risks with online participation, in particular AI use, are ethical, such as misuse of personal information, data security breaches and undermining educational integrity (Australian Human Rights Commission, 2023; Department of Education, 2023). In my online research for classroom activities on this element, where I was less experienced, the wellbeing project for schools, the YeS Project, came up (Australian Government, n.d.). Wyatt-Smith (2024) speaks of informed pedagogy to inform students, which the YeS Project, as a workshop-based program, offers.
+</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Anne Gerstenberger</p>
+            <nav>
+                <ul class="footer-nav">
+                    <li class="dropup">
+                        <a href="index.html" class="dropbtn">AT 1</a>
+                        <div class="dropup-content">
+                            <a href="index.html">Introduction</a>
+                        </div>
+                    </li>
+
+                    <li class="dropup">
+                        <a href="Week1.html" class="dropbtn">AT 2</a>
+                        <div class="dropup-content">
+                            <a href="Week1.html">Week 1</a>
+                            <a href="Week2.html">Week 2</a>
+                            <a href="Week3.html">Week 3</a>
+                            <a href="#">Week 4</a>
+                        </div>
+                    </li>
+
+                    <li class="dropup">
+                        <a href="#" class="dropbtn">AT 3</a>
+                        <div class="dropup-content">
+                            <a href="#">Week 5</a>
+                            <a href="#">Week 6</a>
+                            <a href="#">Week 7</a>
+                            <a href="#">Week 8</a>
+                        </div>
+                    </li>
+
+                    <li class="dropup">
+                        <a href="index.html#references" class="dropbtn">References</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+<script>
+function closeModal() {
+    document.getElementById('welcomeModal').classList.add('hidden');
+}
+</script>
+</body>
+</html>
