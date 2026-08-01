@@ -11,6 +11,13 @@
 </head>
 
 <body>
+    <div class="modal-overlay" id="welcomeModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <h2>Welcome to Week 4</h2>
+        <p>This week's task was:<br>to apply two models to a lesson idea and explain one strength and one limitation of each. </p>
+    </div>
+</div>
     <header class="navbar">
     <div class="logo">Classroom Technologies</div>
     <nav>
@@ -53,7 +60,7 @@
         <div class="prezi-container-Week4">
             <h1>Week 4</h1>
             <h2>Models & Frameworks of Digital Technologies</h2>
-            <iframe src="https://prezi.com/p/embed/hzsN4QyAUDqXCawrkX8z/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="315" width="560"></iframe>
+           <iframe src="https://prezi.com/p/embed/hzsN4QyAUDqXCawrkX8z/" id="iframe_container" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay; fullscreen"></iframe>
         </div>
     </section>
 
@@ -96,6 +103,10 @@
             </nav>
         </div>
     </footer>
-
+<script>
+function closeModal() {
+    document.getElementById('welcomeModal').classList.add('hidden');
+}
+</script>
 </body>
 </html>

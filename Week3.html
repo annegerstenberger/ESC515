@@ -37,7 +37,7 @@
                     <a href="Week1.html">Week 1</a>
                     <a href="Week2.html">Week 2</a>
                     <a href="Week3.html">Week 3</a>
-                    <a href="#">Week 4</a>
+                    <a href="Week4.html">Week 4</a>
                 </div>
             </li>
          
@@ -68,6 +68,7 @@
         <img src="img/Explainscreenshot.png" alt="Digital literacy diagram on Explain everything">
     </a>
             </div>
+            <p>Create a diagram using the tools available in Explain Everything that includes the 4 Digital Literacy elements.</p>
         </main>
     </section>
 
@@ -89,8 +90,8 @@
     <!-- Section 3: Plain text -->
     <section class="text-section-Week3">
         <div class="text-container-Week3">
-            <p>Over my short teaching career, I have collected many resources and have used most of the ideas in my diagram so far. In science especially, students analyse data regularly, create online graphs for depth studies, use simulations for many topics to understand abstract concepts and create reports or presentations of their findings using digital tools.<br>
-The element I struggled with in Digital Literacy, however, is practising digital safety and wellbeing. I have not addressed this with my students directly (ACARA, 2026). Policy creators agree that the main risks with online participation, in particular AI use, are ethical, such as misuse of personal information, data security breaches and undermining educational integrity (Australian Human Rights Commission, 2023; Department of Education, 2023). In my online research for classroom activities on this element, where I was less experienced, the wellbeing project for schools, the YeS Project, came up (Australian Government, n.d.). Wyatt-Smith (2024) speaks of informed pedagogy to inform students, which the YeS Project, as a workshop-based program, offers.
+            <p>Explanation<br>Over my short teaching career, I have collected many resources and have used most of the ideas in my diagram so far. In science especially, students analyse data regularly, create online graphs for depth studies, use simulations for many topics to understand abstract concepts and create reports or presentations of their findings using digital tools.<br>
+The element I struggled with in Digital Literacy Diagram above, however, is practising digital safety and wellbeing (ACARA, 2026). I have not addressed this with my students yet. Policy creators agree that the main risks with online participation, in particular AI use, are ethical, such as misuse of personal information, data security breaches and undermining educational integrity (Australian Human Rights Commission, 2023; Department of Education, 2023). In my online research for classroom activities on this element, where I was less experienced, the wellbeing project for schools, the YeS Project, came up (Australian Government, n.d.). Wyatt-Smith (2024) speaks of informed pedagogy to inform students, which the YeS Project, as a workshop-based program, offers.
 </p>
         </div>
     </section>
@@ -113,7 +114,7 @@ The element I struggled with in Digital Literacy, however, is practising digital
                             <a href="Week1.html">Week 1</a>
                             <a href="Week2.html">Week 2</a>
                             <a href="Week3.html">Week 3</a>
-                            <a href="#">Week 4</a>
+                            <a href="Week4.html">Week 4</a>
                         </div>
                     </li>
 
@@ -138,6 +139,23 @@ The element I struggled with in Digital Literacy, however, is practising digital
 function closeModal() {
     document.getElementById('welcomeModal').classList.add('hidden');
 }
+function closeModal() {
+    document.getElementById('welcomeModal').classList.add('hidden');
+}
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.navbar');
+    const lastSection = document.querySelector('.text-section-Week3');
+    const rect = lastSection.getBoundingClientRect();
+
+    if (rect.top <= 0) {
+        header.style.opacity = "0";
+        header.style.pointerEvents = "none";
+    } else {
+        header.style.opacity = "1";
+        header.style.pointerEvents = "auto";
+    }
+});
 </script>
 </body>
 </html>

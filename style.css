@@ -32,6 +32,7 @@ body {
     align-items: center;
     padding: 20px 50px;
     overflow: visible;
+     transition: opacity 0.3s ease;
 }
 
 .navbar nav ul { display: flex; list-style: none; gap: 20px;}
@@ -693,7 +694,7 @@ font-family: Arial, sans-serif;
 .text-section-Week2c {
     height: 100vh;
     min-height: 100vh;
-    background-color: #f0f0e8;
+    background-color: #d4d9d6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -821,7 +822,7 @@ font-family: Arial, sans-serif;
 .text-section-Week3 {
     height: 100vh;
     min-height: 100vh;
-    background-color: #f0f0e8;
+    background-color: #d4d9d6;
     display: flex;
     justify-content: center;
     align-items: center;
