@@ -64,6 +64,13 @@
         </div>
     </section>
 
+    <section class="text-section-Week4">
+    <div class="text-container-Week4">
+        <img src="img/AITEO.png" alt="Description of image" class="week4-image">
+        <p><em>The love-hate relationship with GenAI, drawn by my 10-year-old son.</em></p>
+    </div>
+</section>
+
     <footer class="footer">
         <div class="footer-content">
             <p>Anne G.</p>
@@ -104,9 +111,23 @@
         </div>
     </footer>
 <script>
+    
 function closeModal() {
     document.getElementById('welcomeModal').classList.add('hidden');
 }
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.navbar');
+    const lastSection = document.querySelector('.text-section-Week4');
+    const rect = lastSection.getBoundingClientRect();
+
+    if (rect.top <= 0) {
+        header.style.opacity = "0";
+        header.style.pointerEvents = "none";
+    } else {
+        header.style.opacity = "1";
+        header.style.pointerEvents = "auto";
+    }
+});
 </script>
 </body>
 </html>
