@@ -902,7 +902,7 @@ font-family: Arial, sans-serif;
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: #feedcd(11, 97, 184, 0.4);   /* translucent blue backdrop */
+   background: rgba(228, 218, 175, 0.609);   /* translucent blue backdrop */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -999,23 +999,28 @@ font-family: Arial, sans-serif;
     font-size: 6em;
     font-weight: 400;
     color: #0b61b8;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .prezi-container-Week4 h2 {
     font-family: Arial, sans-serif;
     font-size: 22px;
     font-weight: normal;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     color: #0b61b8; 
 }
 
 .prezi-container-Week4 iframe {
-    width: 100%;
-     height: 67vh;          /* set height directly */
-    aspect-ratio: unset;   
+    width: 80%;
+    max-width: 900px;
+      aspect-ratio: 16 / 10;    /* 1.6 — between 3/2 and 16/9 */
+    height: auto;           /* derived from width + aspect-ratio */
+    display: block;
+    margin: 20px auto 0 auto;
     border-radius: 15px;
     border: none;
+
+  
 }
 
 .text-section-Week4 {
